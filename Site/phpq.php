@@ -94,14 +94,14 @@ array_multisort($c_name, SORT_ASC, $c_pop, SORT_ASC, $results);
 		
 		
 		$output .= "<ul>
-								<li class='col-1'>" . $c['name'] . "</li>
-								<li class='col-2'>" . $c['alpha2Code'] . "</li>
-								<li class='col-3'>" . $c['alpha3Code'] . "</li>
-								<li class='col-4'><img alt='flag' src='" . $c['flag'] . "'></li>
-								<li class='col-5'>" . $c['region'] . "</li>
-								<li class='col-6'>" . $c['subregion'] . "</li>
-								<li class='col-7'>" . number_format($c['population']) . "</li>
-								<li class='col-8'>";
+								<li>" . $c['name'] . "</li>
+								<li>" . $c['alpha2Code'] . "</li>
+								<li>" . $c['alpha3Code'] . "</li>
+								<li><img alt='flag' src='" . $c['flag'] . "'></li>
+								<li>" . $c['region'] . "</li>
+								<li>" . $c['subregion'] . "</li>
+								<li>" . number_format($c['population']) . "</li>
+								<li>";
 								foreach($c['languages'] as $l){
 									$output .= $l['name'] . "<br>";
 								}
@@ -119,14 +119,14 @@ array_multisort($c_name, SORT_ASC, $c_pop, SORT_ASC, $results);
 		$singleSubRegion[$results['subregion']] = 1;
 		
 		$output .= "<ul>
-								<li class='col-1'>" . $results['name'] . "</li>
-								<li class='col-2'>" . $results['alpha2Code'] . "</li>
-								<li class='col-3'>" . $results['alpha3Code'] . "</li>
-								<li class='col-4'><img alt='flag' src='" . $results['flag'] . "'></li>
-								<li class='col-5'>" . $results['region'] . "</li>
-								<li class='col-6'>" . $results['subregion'] . "</li>
-								<li class='col-7'>" . number_format($results['population']). "</li>
-								<li class='col-8'>";
+								<li>" . $results['name'] . "</li>
+								<li>" . $results['alpha2Code'] . "</li>
+								<li>" . $results['alpha3Code'] . "</li>
+								<li><img alt='flag' src='" . $results['flag'] . "'></li>
+								<li>" . $results['region'] . "</li>
+								<li>" . $results['subregion'] . "</li>
+								<li>" . number_format($results['population']). "</li>
+								<li>";
 								foreach($results['languages'] as $l){
 									$output .= $l['name'] . "<br>";
 								}
