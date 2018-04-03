@@ -14,10 +14,6 @@ li img{
 	width:100%;
 }
 
-.totals ul{
-	
-}
-
 .totals {
     width: 30%;
     display: inline-block;
@@ -25,4 +21,8 @@ li img{
 
 .totals li{
 	width:100%;
+}
+
+span{
+	color:red;
 }

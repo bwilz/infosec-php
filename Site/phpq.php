@@ -15,11 +15,11 @@ function get_data($search){
 
 //checks if input is a number
 if(is_numeric($term)){
-	echo "Sorry, no numbers";
+	echo "<span>Sorry, no numbers</span>";
 	return;
 }else{
 	if(strlen($term) <= 1){
-		echo 'Search term too short';
+		echo '<span>Search term too short</span>';
 		return;
 	}elseif(strlen($term) <= 3){
 		//search using code
@@ -42,8 +42,12 @@ if(isset($results['status'])){
 		//if it was then try it again as a partial name
 		$search = curl_init('https://restcountries.eu/rest/v2/name/' . $term . '?fields=name;alpha2Code;alpha3Code;flag;region;subregion;population;languages;');
 		$results = get_data($search);
+		if(isset($results['status'])){
+				echo "<span>Sorry, no results found</span>";
+				return;
+		}	
 	}else{
-		echo "Sorry, no results found";
+		echo "<span>Sorry, no results found</span>";
 		return;
 	}
 }
@@ -160,7 +164,7 @@ echo $output;
 
 
 }else{
-	echo "No search term entered";
+	echo "<span>No search term entered</span>";
 }
 
 ?>
