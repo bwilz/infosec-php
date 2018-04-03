@@ -1,0 +1,28 @@
+.output-area ul {
+    display: flex;
+	list-style-type: none; 
+	flex-wrap: wrap;
+	padding:0;
+}
+
+li{
+	width:12%;
+	margin:auto;
+}
+
+li img{
+	width:100%;
+}
+
+.totals ul{
+	
+}
+
+.totals {
+    width: 30%;
+    display: inline-block;
+}
+
+.totals li{
+	width:100%;
+}

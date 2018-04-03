@@ -1,0 +1,50 @@
+<html>
+<head>
+<?php require(phpq.php); 
+
+PHPinfo();
+?>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		
+		<title>php test - infosec</title>
+</head>
+<body>
+	<h1>Country Search</h1>
+	<form>
+	<input type='text' name='search' id='search' placeholder='enter country name or code'>
+	<input id='submit' type='submit' value='search' />
+	</form>
+	<div class='output-area'>
+	</div>
+	<footer>
+	</footer>
+	<script>
+	jQuery(document).ready(function($){
+		$('#submit').on('click', function(){
+			event.preventDefault();
+			console.log($('#search').val());
+			
+				data='';
+
+				$.ajax({
+					type: 'POST',
+					url: 'phpq.php',
+					data:$('#search'),
+					success: function(data){
+						
+						$('.output-area').html(data);
+						
+					},
+					error: function(){
+						console.log('error');
+					}
+				});
+
+			
+		});
+		
+	});
+	</script>
+</body>
+</html>
